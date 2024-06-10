@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/json" -H "Authorization: Bearer $SECRET_KEY" -X POST "https://$INSTANCE_ID.pushnotifications.pusher.com/publish_api/v1/instances/$INSTANCE_ID/publishes/interests" -d @publish-body.json
