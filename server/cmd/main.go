@@ -27,6 +27,7 @@ func main() {
 	// Handle auth requests
 	http.HandleFunc("/pusher/beams-auth", func(w http.ResponseWriter, r *http.Request) {
 		// Do your normal auth checks here 🔒
+		// TODO: Replace this with your client console.log device-id
 		userID := "web-f6edbbbf-68ba-4ee3-8129-43df3e7addc7" // get it from your client register service worker console.log(PusherPushNotifications.token)
 		userIDinQueryParam := r.URL.Query().Get("user_id")
 		if userID != userIDinQueryParam {
