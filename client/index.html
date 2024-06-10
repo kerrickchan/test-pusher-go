@@ -4,7 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <script src="/service-worker.js"></script>
+    <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
+    <script>
+      const beamsClient = new PusherPushNotifications.Client({
+        instanceId: '1ea6fa25-e82d-4924-81d1-dc17ff058fab', // TODO: replace with your own instance id
+      });
+      beamsClient.start()
+        .then(() => beamsClient.addDeviceInterest('hello'))
+        .then(() => beamsClient.addDeviceInterest('debug-hello'))
+        .then(() => beamsClient.getDeviceInterests())
+        .then(() => console.log('Successfully registered and subscribed!'))
+        .catch(console.error);
+    </script>
+    <title>Pusher Notification with Go in Chrome</title>
   </head>
   <body>
     <div id="root"></div>

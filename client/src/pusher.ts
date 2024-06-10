@@ -1,4 +1,3 @@
-import './service-worker.js'
 import * as PusherPushNotifications from "@pusher/push-notifications-web";
 
 const beamsClient = new PusherPushNotifications.Client({
